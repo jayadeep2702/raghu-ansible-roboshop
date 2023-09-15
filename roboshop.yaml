@@ -1,0 +1,4 @@
+- name: configure roboshop project
+  hosts: all
+  roles:
+  - {{"role_name"}}
