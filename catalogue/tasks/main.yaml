@@ -1,0 +1,5 @@
+- name: demo
+  hosts: locahost
+  tasks:
+    ansible.builtin.debug:
+      msg: component - frontend
