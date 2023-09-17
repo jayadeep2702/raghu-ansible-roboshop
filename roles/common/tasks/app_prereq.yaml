@@ -15,6 +15,6 @@
 
 - name : extract the catalogue artifact
   ansible.builtin.unarchive :
-    url: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
+    url: https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
     dest : /app
     remote_src : yes

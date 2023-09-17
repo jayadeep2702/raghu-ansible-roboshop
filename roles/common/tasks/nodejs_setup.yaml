@@ -16,6 +16,6 @@
     chdir: /app
 
 
-- name: include task list in a play
+- name: include schema load
   ansible.builtin.import_tasks:
     file: schema_setup.yaml
