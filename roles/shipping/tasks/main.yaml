@@ -1,0 +1,4 @@
+- name: installing shipping component
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: java_setup
