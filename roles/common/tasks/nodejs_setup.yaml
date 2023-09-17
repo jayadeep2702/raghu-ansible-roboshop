@@ -19,3 +19,7 @@
 - name: include schema load
   ansible.builtin.import_tasks:
     file: schema_setup.yaml
+
+- name: include systemd service
+  ansible.builtin.import_tasks:
+    file: systemd_setup.yaml
