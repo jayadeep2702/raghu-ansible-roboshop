@@ -14,3 +14,8 @@
   ansible.builtin.shell: npm install
   args:
     chdir: /app
+
+
+- name: include task list in a play
+  ansible.builtin.import_tasks:
+    file: schema_setup.yaml

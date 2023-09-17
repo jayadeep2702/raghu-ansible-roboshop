@@ -2,11 +2,14 @@
   ansible.builtin.copy :
     src : mongo.repo
     dest : /etc/yum.repos.d/mongo.repo
+  when: schema_setup == "mongo"
 
 - name :  mongodb client software installation
   ansible.builtin.yum :
     name : mongodb-org-shell
     state : installed
+  when: schema_setup == "mongo"
 
 - name: load catalogue data(schema)
   ansible.builtin.command: mongo --host {{ lookup('aws_ssm',  'dev.catalogue.mongodb_endpoint', region='us-east-1') }} < /app/schema/{{component}}.js
+  when: schema_setup == "mongo"
