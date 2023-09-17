@@ -1,0 +1,4 @@
+- name: installing catalogue component
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs-setup
