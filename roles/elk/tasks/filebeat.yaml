@@ -16,5 +16,5 @@
 - name: start filebeat
   ansible.builtin.systemd:
     name: filebeat
-    service: restarted
+    state: restarted
     enabled: yes
