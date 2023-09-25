@@ -30,6 +30,12 @@
     src : roboshop.conf
     dest : /etc/nginx/default.d/roboshop.conf
 
+
+- name : copy nginx conf file
+  ansible.builtin.template :
+    src : nginx.conf
+    dest : /etc/nginx/nginx.conf
+
 - name : restart frontend
   ansible.builtin.service :
     name : nginx
