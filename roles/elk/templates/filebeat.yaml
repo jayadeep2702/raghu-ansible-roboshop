@@ -1,15 +1,14 @@
-
 filebeat.inputs:
-  - type: filestream
-    id: {{ component }}
-    enabled: true
-    paths:
-      - {{ log_file }}
-    fields:
-      component: {{ component }}
+- type: filestream
+  id: {{ component }}
+  enabled: true
+  paths:
+    - {{ log_file }}
+  fields:
+    component: {{ component }}
 
 output.logstash:
-  hosts: ["172.31.87.137:5044"]
+  hosts: ["172.31.21.159:5044"]
 
 ## Defualt
 filebeat.config.modules:
@@ -21,4 +20,3 @@ setup.template.settings:
 processors:
   - drop_fields:
       fields: ["agent.ephemeral_id", "agent.hostname", "agent.id", "agent.type", "agent.version", "ecs.version", "input.type", "log.offset", "version", "agent.name"]
-
