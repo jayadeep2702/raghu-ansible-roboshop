@@ -20,3 +20,9 @@
 - name: include systemd service
   ansible.builtin.import_tasks:
     file: systemd_setup.yaml
+
+
+- name: import prometheus
+  ansible.builtin.import_role:
+    name: prometheus
+    tasks_from: node_exporter
