@@ -1,4 +1,4 @@
 labels:
-  - { tag: Name, label: name}
-  - { tag: env, label: env}
-  - { tag: component, label: component}
+  - { tag: Name, label: name }
+  - { tag: env, label: env }
+  - { tag: component, label: component }
