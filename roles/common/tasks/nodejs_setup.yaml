@@ -9,11 +9,11 @@
 - name: include task list in a play
   ansible.builtin.import_tasks:
     file: app_prereq.yaml
-
-- name: install dependencies
-  ansible.builtin.shell: npm install
-  args:
-    chdir: /app
+# THIS STRP IS NO MORE NEEDED AS CI PIPELINE IS TAKINGCARE
+#- name: install dependencies
+#  ansible.builtin.shell: npm install
+#  args:
+#    chdir: /app
 
 
 - name: include schema load

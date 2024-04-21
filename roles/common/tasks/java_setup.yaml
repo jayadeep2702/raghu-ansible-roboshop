@@ -1,16 +1,23 @@
-- name: Install maven
+## THIS STRP IS NO MORE NEEDED AS CI PIPELINE IS TAKINGCARE
+#- name: Install maven
+#  ansible.builtin.yum :
+#    name: maven
+#    state: installed
+
+- name: Install java
   ansible.builtin.yum :
-    name: maven
+    name: java-17-openjdk
     state: installed
 
 - name: include task list in a play
   ansible.builtin.import_tasks:
     file: app_prereq.yaml
 
-- name: download maven dependencies
-  ansible.builtin.shell: mvn clean package ; mv target/{{component}}-1.0.jar {{component}}.jar
-  args:
-    chdir: /app
+# THIS STRP IS NO MORE NEEDED AS CI PIPELINE IS TAKINGCARE
+#- name: download maven dependencies
+#  ansible.builtin.shell: mvn clean package ; mv target/{{component}}-1.0.jar {{component}}.jar
+#  args:
+#    chdir: /app
 
 
 - name: include schema load
