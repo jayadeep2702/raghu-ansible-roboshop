@@ -2,9 +2,8 @@
   ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
 - name: Install nodejs
-  ansible.builtin.yum:
-    name: nodejs
-    state: installed
+  ansible.builtin.shell: yum install nodejs -y
+
 
 - name: include task list in a play
   ansible.builtin.import_tasks:
