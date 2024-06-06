@@ -6,9 +6,8 @@
         src : mongo.repo
         dest : /etc/yum.repos.d/mongo.repo
     - name :  mongodb client software installation
-      ansible.builtin.yum :
-        name : mongodb-org-shell
-        state : installed
+      ansible.builtin.shell : yum install mongodb-org-shell -y
+
 
     - name: Download DocDB PEM File
       ansible.builtin.get_url:
