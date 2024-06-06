@@ -1,6 +1,6 @@
 
 - name: nginx installation
-  ansible.builtin.shell:
+  ansible.builtin.yum:
     name: nginx
     state: installed
 
