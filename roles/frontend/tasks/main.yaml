@@ -2,7 +2,7 @@
 - name : nginx installation
   ansible.builtin.yum :
     name : nginx
-    state : present
+    state : installed
 - name : start and enable nginx
   ansible.builtin.service :
     name : nginx
