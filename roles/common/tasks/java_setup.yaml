@@ -1,8 +1,8 @@
 ## THIS STRP IS NO MORE NEEDED AS CI PIPELINE IS TAKINGCARE
-#- name: Install maven
-#  ansible.builtin.yum :
-#    name: maven
-#    state: installed
+- name: Install maven
+  ansible.builtin.yum :
+    name: maven
+    state: installed
 
 - name: Install java
   ansible.builtin.yum :
