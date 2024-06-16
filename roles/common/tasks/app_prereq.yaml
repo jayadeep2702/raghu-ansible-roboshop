@@ -21,6 +21,6 @@
 
 - name : extract the catalogue artifact
   ansible.builtin.unarchive :
-    src: http://172.31.12.50:8081/repository/{{component}}/{{component}}-{{app_version}}.zip
+    src: http://172.31.12.50:8081/repository/{{component}}/{{component}}-{{ lookup('aws_ssm', '{{ env }}.{{component}}.app_version', region='us-east-1' ) }}.zip
     dest : /app
     remote_src : yes
