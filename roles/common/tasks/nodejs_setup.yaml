@@ -12,10 +12,10 @@
     file: app_prereq.yaml
 
 #THIS STRP IS NO MORE NEEDED AS CI PIPELINE IS TAKINGCARE
-- name: install dependencies
-  ansible.builtin.shell: npm install
-  args:
-    chdir: /app
+#- name: install dependencies
+#  ansible.builtin.shell: npm install
+#  args:
+#    chdir: /app
 
 
 - name: include schema load
