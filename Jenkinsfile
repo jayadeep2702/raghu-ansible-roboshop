@@ -21,9 +21,10 @@ pipeline {
        }
 
    stage ('ANSIBLE') {
-     steps { '''
-       sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}-${env}" --query 'Reservations[*].Instances[*].PrivateIpAddress' --output text >/tmp/inv'
-       sh 'ansible-playbook -i /tmp/inv roboshop.yaml -e ansible_user=centos -e ansible_password=DevOps321 -e env=${env} -e role_name=${component}'
+     steps {
+       sh ''' 
+          aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}-${env}" --query 'Reservations[*].Instances[*].PrivateIpAddress' --output text >/tmp/inv'
+          ansible-playbook -i /tmp/inv roboshop.yaml -e ansible_user=centos -e ansible_password=DevOps321 -e env=${env} -e role_name=${component}'
        '''
      }
    }
