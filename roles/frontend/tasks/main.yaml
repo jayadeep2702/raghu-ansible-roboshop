@@ -1,6 +1,11 @@
+- name: disable nginx module
+  ansible.builtin.shell: dnf module disable nginx -y
+
+- name: enable nginx module
+  ansible.builtin.shell: dnf module enable nginx:1.24 -y
 
 - name: nginx installation
-  ansible.builtin.yum:
+  ansible.builtin.dnf:
     name: nginx
     state: installed
 
